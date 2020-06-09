@@ -1,0 +1,36 @@
+documentation_complete: true
+
+title: AppArmor
+
+description: |-
+    AppArmor is a Mandatory Access Control (MAC) system which is a kernel 
+    (LSM) enhancement to confine programs to a limited set of resources. 
+    AppArmor's security model is to bind access control attributes to programs
+    rather than to users. AppArmor confinement is provided via profiles loaded
+    into the kernel, typically on boot. AppArmor profiles can be in one of two modes: 
+    enforcement and complain. Profiles loaded in enforcement mode will result in
+    enforcement of the policy defined in the profile as well as reporting policy 
+    violation attempts (either via syslog or auditd). Profiles in complain mode will 
+    not enforce policy but instead report policy violation attempts.
+    <br /><br />
+    AppArmor differs from some other MAC systems on Linux: it is path-based, it
+    allows mixing of enforcement and complain mode profiles, it uses include files to
+    ease development, and it has a far lower barrier to entry than other popular MAC systems.
+    <br /><br />
+    AppArmor is an established technology first seen in Immunix and later integrated into Ubuntu,
+    Novell/SUSE, and Mandriva. Core AppArmor functionality is in the mainline Linux kernel from 2.6.36 onwards;
+    work is ongoing by AppArmor, Ubuntu and other developers to merge additional AppArmor functionality into the
+    mainline kernel.
+    <br /><br />
+    This guide recommends that SELinux be enabled using the
+    default (targeted) policy on every {{{ full_name }}} system, unless that
+    system has unusual requirements which make a stronger policy
+    appropriate.
+    {{% if product == "rhel7" %}}
+    <br /><br />
+    For more information on SELinux, see <b>{{{ weblink(link="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/SELinux_Users_and_Administrators_Guide") }}}</b>.
+    {{% elif product == "ol7" %}}
+    For more information on SELinux, see <b>{{{ weblink(link="https://docs.oracle.com/cd/E52668_01/E54669/html/ol7-s1-syssec.html") }}}</b>.
+    {{% endif %}}
+
+platform: machine
