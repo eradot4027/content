@@ -1,0 +1,29 @@
+documentation_complete: true
+
+prodtype: sle15
+
+title: 'Ensure AppArmor is Not Disabled in /etc/default/grub'
+
+description: |-
+    AppArmor can be disabled at boot time by an argument in
+    <tt>/etc/default/grub</tt>.
+    Remove any instances of <tt>apparmor=0</tt> from the kernel arguments in that
+    file to prevent AppArmor from being disabled at boot.
+
+rationale: |-
+    Disabling a major host protection feature, such as AppArmor, at boot time prevents
+    it from confining system services at boot time.  Further, it increases
+    the chances that it will remain off during system operation.
+
+severity: medium
+
+
+references:
+    cis@sle15: 1.7.1.2
+
+ocil_clause: 'AppArmor is disabled at boot time'
+
+ocil: |-
+    Inspect <tt>/etc/default/grub</tt> for any instances of <tt>apparmor=0</tt>
+    in the kernel boot arguments.  Presence of <tt>apparmor=0</tt> indicates
+    that AppArmor is disabled at boot time.
