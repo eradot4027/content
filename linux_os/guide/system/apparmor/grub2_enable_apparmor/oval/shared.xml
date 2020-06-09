@@ -8,9 +8,9 @@
       </description>
     </metadata>
     <criteria operator="AND">
-      <criterion comment="check value apparmor|enforcing=0 in /etc/default/grub, fail if found" test_ref="test_apparmor_default_grub" />
-      <criterion comment="check value apparmor|enforcing=0 in /etc/grub2.cfg, fail if found" test_ref="test_apparmor_grub2_cfg" />
-      <criterion comment="check value apparmor|enforcing=0 in /etc/grub.d, fail if found" test_ref="test_apparmor_grub_dir" />
+      <criterion comment="check value apparmor=0 in /etc/default/grub, fail if found" test_ref="test_apparmor_default_grub" />
+      <criterion comment="check value apparmor=0 in /etc/grub2.cfg, fail if found" test_ref="test_apparmor_grub2_cfg" />
+      <criterion comment="check value apparmor=0 in /etc/grub.d, fail if found" test_ref="test_apparmor_grub_dir" />
     </criteria>
   </definition>
 
@@ -23,7 +23,7 @@
   comment="check value apparmor|enforcing=0 in /etc/default/grub, fail if found"
   version="1">
     <ind:filepath>/etc/default/grub</ind:filepath>
-    <ind:pattern operation="pattern match">^[\s]*GRUB_CMDLINE_LINUX.*(apparmor|enforcing)=0.*$</ind:pattern>
+    <ind:pattern operation="pattern match">^[\s]*GRUB_CMDLINE_LINUX.*apparmor=0.*$</ind:pattern>
     <ind:instance datatype="int" operation="equals">1</ind:instance>
   </ind:textfilecontent54_object>
 
@@ -36,7 +36,7 @@
   comment="check value apparmor|enforcing=0 in /etc/grub2.cfg, fail if found"
   version="1">
     <ind:filepath>/etc/grub2.cfg</ind:filepath>
-    <ind:pattern operation="pattern match">^.*(apparmor|enforcing)=0.*$</ind:pattern>
+    <ind:pattern operation="pattern match">^.*apparmor=0.*$</ind:pattern>
     <ind:instance datatype="int" operation="equals">1</ind:instance>
   </ind:textfilecontent54_object>
 
@@ -50,7 +50,7 @@
   version="1">
     <ind:path>/etc/grub.d</ind:path>
     <ind:filename operation="pattern match">^.*$</ind:filename>
-    <ind:pattern operation="pattern match">^.*(apparmor|enforcing)=0.*$</ind:pattern>
+    <ind:pattern operation="pattern match">^.*apparmor=0.*$</ind:pattern>
     <ind:instance datatype="int" operation="equals">1</ind:instance>
   </ind:textfilecontent54_object>
 
