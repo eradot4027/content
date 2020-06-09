@@ -15,7 +15,7 @@
 - name: Ensure AppArmor Not Disabled in grub files
   replace:
     dest: "{{ item.path }}"
-    regexp: (apparmor|enforcing)=0
+    regexp: (apparmor)=0
   with_items:
 {{%- if product == "rhel6" %}}
     - { path: /etc/grub.conf }
