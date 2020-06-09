@@ -2,16 +2,16 @@ documentation_complete: true
 
 prodtype: sle15
 
-title: 'Install libapparmor Package'
+title: 'Install libapparmor1 Package'
 
 description: |-
-    {{{ describe_package_install(package="libapparmor") }}}
+    {{{ describe_package_install(package="libapparmor1") }}}
 
 rationale: |-
     AppArmor is a Mandatory Access Control (MAC) system which is a kernel (LSM) 
     enhancement to confine programs to a limited set of resources. 
 
-    The <tt>libapparmor</tt> package contains the core library of the AppArmor.
+    The <tt>libapparmor1</tt> package contains the core library of the AppArmor.
 
 severity: high
 
@@ -20,9 +20,9 @@ references:
 
 ocil_clause: 'the package is not installed'
 
-ocil: '{{{ ocil_package(package="libapparmor") }}}'
+ocil: '{{{ ocil_package(package="libapparmor1") }}}'
 
 template:
     name: package_installed
     vars:
-        pkgname: libapparmor
+        pkgname: libapparmor1
