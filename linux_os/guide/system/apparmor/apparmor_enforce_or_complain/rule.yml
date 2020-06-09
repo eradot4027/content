@@ -10,7 +10,7 @@ description: |-
     Run the following command and verify that profiles are loaded, profiles are in enforce or 
     complain mode:
     <pre>apparmor_status | grep profiles</pre>
-    
+
     Output will be similar to:
     <pre>37 profiles are loaded.
     35 profiles are in enforce mode.
