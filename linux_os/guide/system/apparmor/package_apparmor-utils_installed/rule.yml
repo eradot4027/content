@@ -2,27 +2,27 @@ documentation_complete: true
 
 prodtype: sle15
 
-title: 'Install apparmor-profiles Package'
+title: 'Install apparmor-utils Package'
 
 description: |-
-    {{{ describe_package_install(package="apparmor-profiles") }}}
+    {{{ describe_package_install(package="apparmor-utils") }}}
 
 rationale: |-
     AppArmor is a Mandatory Access Control (MAC) system which is a kernel (LSM) 
     enhancement to confine programs to a limited set of resources. 
 
-    The <tt>apparmor-utils</tt> package contains the core AppArmor profiles.
+    The <tt>apparmor-utils</tt> package contains the core utilities for AppArmor.
 
 severity: high
 
 references:
-    cis@sle15: 1.7.1.1.3
+    cis@sle15: 1.7.1.1.4
 
 ocil_clause: 'the package is not installed'
 
-ocil: '{{{ ocil_package(package="apparmor-profiles") }}}'
+ocil: '{{{ ocil_package(package="apparmor-utils") }}}'
 
 template:
     name: package_installed
     vars:
-        pkgname: apparmor-profiles
+        pkgname: apparmor-utils
